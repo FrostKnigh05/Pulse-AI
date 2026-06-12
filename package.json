@@ -1,0 +1,17 @@
+{
+  "name": "server-analytics-memory-bot",
+  "version": "0.1.0",
+  "description": "Discord bot with server analytics and server memory features.",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.12.1",
+    "dotenv": "^16.4.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
