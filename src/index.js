@@ -27,11 +27,10 @@ let data = {};
 async function loadConfig() {
   dotenv.config();
 
-  const envConfig = {
-    token: process.env.DISCORD_TOKEN ?? '',
-    prefix: process.env.COMMAND_PREFIX ?? defaultConfig.prefix,
-  };
-
+ const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+  console.log(`HTTP server listening on port ${PORT}`);
+});
   try {
     const raw = await fs.readFile(configPath, 'utf8');
     config = { ...defaultConfig, ...JSON.parse(raw), ...envConfig };
