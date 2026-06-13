@@ -1,3 +1,4 @@
+import http from 'http';
 import fs from 'fs/promises';
 import path from 'path';
 import dotenv from 'dotenv';
@@ -12,7 +13,10 @@ import {
   SlashCommandBuilder,
   EmbedBuilder,
 } from 'discord.js';
-
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Bot is running');
+});
 const dataPath = path.resolve('data.json');
 const configPath = path.resolve('config.json');
 
