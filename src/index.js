@@ -27,7 +27,10 @@ const defaultConfig = {
 
 let config = defaultConfig;
 let data = {};
-
+const envConfig = {
+  token: process.env.DISCORD_TOKEN || '',
+  prefix: process.env.PREFIX || '!',
+};
 async function loadConfig() {
   dotenv.config();
 
